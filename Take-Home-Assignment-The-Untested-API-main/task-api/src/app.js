@@ -4,6 +4,12 @@ const taskRoutes = require('./routes/tasks');
 const app = express();
 
 app.use(express.json());
+
+// Root path to prevent 404 on base URL
+app.get('/', (req, res) => {
+  res.json({ message: 'Task API is running. Go to /tasks to use the API.' });
+});
+
 app.use('/tasks', taskRoutes);
 
 app.use((err, req, res, next) => {

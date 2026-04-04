@@ -1,11 +1,19 @@
 {
-  "name": "root-deployer",
+  "name": "task-api",
   "version": "1.0.0",
+  "description": "Task Manager API",
+  "main": "task-api/src/app.js",
   "scripts": {
-    "start": "cd task-api && npm start",
-    "build": "cd task-api && npm install"
+    "start": "node task-api/src/app.js",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
-  "engines": {
-    "node": ">=18.0.0"
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
   }
 }
